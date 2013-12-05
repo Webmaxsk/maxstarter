@@ -1,0 +1,13 @@
+{
+  "name": "maxstarter",
+  "private": "true",
+  "directory": "javascript",
+  "dependencies": {
+    "foundation": "~5.0.2",
+    "susy":"~1.0.9",
+    "jquery-mmenu": "*",
+    "modernizr": "*",
+    "jquery": "*",
+    "fancybox": "*"
+  }
+}

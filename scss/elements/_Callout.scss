@@ -1,0 +1,7 @@
+#Callout {
+  .Callout {
+    text-align: center; @include heading-rhytm(32px, 1.2, 0.5, 0.5);
+    font-weight: normal;
+    strong {color: $primary-color;}
+  }
+}

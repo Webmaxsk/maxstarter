@@ -1,0 +1,6 @@
+@import "foundation/components/global";
+ 
+ // we dont want foundation global? Use this instead...
+ @if $include-html-global-classes == false {
+    // custom global goes here
+ }

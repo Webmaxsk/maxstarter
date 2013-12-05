@@ -1,0 +1,85 @@
+@if $include-html-form-classes  {
+
+ .message {
+    @include alert;
+    padding-left: 5px;
+    &.good, &.success { @include alert-style($success-color); }
+    &.bad, &.warning, &.required { @include alert-style($alert-color); }
+  }
+
+// /* customize foundation */
+.required, .holder-required {@extend .error;}
+label.error, label.required {@include alert-style($alert-color); padding-left: 5px;}
+
+.Actions input { @extend .button !optional; background:$primary-color; color:#fff; box-shadow: 0 0 0 0 transparent; border:0 none;
+    &:hover, &:focus, &:active { background:$secondary-color; }
+}
+
+.no-label {
+  .formLabel {display: none;}
+}
+
+form {
+  .field {clear: both; }
+    .dropdown {@extend .expand !optional;}
+  textarea {height: 100px;}
+  .optionset {
+    label {display: inline-block; margin-left: 4px;}
+  }
+  span.custom.checkbox {margin-right: 4px;} 
+}
+
+// all forms in Content are horizontal
+// remove this behaviour and add .horizontal to any form tag or div wrapping an element (so you can use horizontal and vertical fields together!)
+.Content form { 
+   //@extend .horizontal;
+   //@extend .no-label;
+}
+
+.horizontal {
+  &.formLabel, .formLabel {
+    label {@extend .right !optional; @extend .inline !optional;}
+  }
+  .file .formLabel label {
+    padding-top: 0;
+  }
+  .no-label {
+    .formLabel {display: block;}
+  }
+}
+
+.readonly { padding-bottom:16px; }
+
+@if $include-html-grid-classes == false {
+  // Horizontal forms
+  @include with-grid-settings(3,300px,10px,0px) {
+    .horizontal {
+      .formLabel {@include span-columns(1,3); }
+      .formField {@include span-columns(2 omega,3);
+        .formField {@include reset-columns; padding-left: 0;}
+      }
+      &.checkbox, .checkbox {
+        .formField {@include pre(1);}
+      }
+      .Actions {@include pre(1);}
+    }
+  }
+} @else {
+    .horizontal {
+      .formLabel {@include grid-column(4); }
+      .formField {@include grid-column(8); padding-right: 0;
+        .formField {@include reset-columns; padding-left: 0;}
+      }
+      &.checkbox, .checkbox {
+        .formField {@include grid-column($push:4);}
+      }
+      .Actions {@include grid-column($push:4, $collapse:null, $float:false);
+        input {margin-left: 20px;}
+      }
+    }
+}
+
+// /* Login to Admin */
+#FoundationMemberLoginForm_LoginForm fieldset { background:transparent; }
+
+}

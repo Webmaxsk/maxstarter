@@ -1,0 +1,13 @@
+
+[data-magellan-expedition] {
+  border-bottom: 1px solid #eee;
+  margin-bottom: $base-line-height;
+  // used in magellan
+  dt {
+    margin-bottom: 0;
+    h1 {
+      font-size: $base-font-size;
+      padding: 0; margin: 0; line-height: $base-line-height;
+    }
+  }
+}

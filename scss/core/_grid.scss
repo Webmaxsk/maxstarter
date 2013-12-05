@@ -1,0 +1,49 @@
+ @import "susy";
+ @mixin susy-grid-background {
+    @include grid-background($total-columns, $column-width, $gutter-width, $base-line-height, $grid-padding, $force-fluid: true);
+ }
+ 
+ .Block {
+   //@include trailer;
+   @include clearfix;
+   margin-bottom: $base-line-height;
+   padding-bottom: $base-line-height;
+   border-bottom: 1px solid #eee;
+}
+
+// Use susy if foundation grid is disabled
+@if $include-html-grid-classes == false {
+  
+    // Static grid? Set outer-row class for small sizes to fixed value
+    // @todo: nedá sa hodnota vypočítať? nakoľko sa jedna o element, ktorý je mimo @container (.row), tak asi nie...
+   @if $container-style == static { 
+      @media (max-width: $container-static-size) {
+        .outer-row {
+          width: $container-static-size + 2* $grid-padding;
+        } 
+      }
+    }
+  
+  .row {
+    // Establish our default 1grid container.
+    @include container;
+  }
+   
+  .side,  #Sidebar, .large-4 { @include span-columns( 4,12); }
+  .main, .large-8 { @include span-columns( 8 omega, 12); }
+  .cFull { @include reset-columns; }
+  
+  .tretinka {@include span-columns( 4,12); }
+  .dvetretinky {@include span-columns( 8,12); }
+  .polovicka {@include span-columns(1,2);}
+  
+  .last {@include omega;}
+  .clear {clear: both;}
+  .clearfix {@include clearfix;}
+
+} @else {
+  // using foundation grid
+  .ChildrenRow {
+    @include clearfix;
+}
+}

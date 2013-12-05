@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+// This includes all of the foundation global elements that are needed to work with any of the other files.
+@import "core/settings";
+
+// compass - default mixins + reset
+@import "compass"; 
+@import "compass/reset"; 
+//OR Normalize
+//@import "normalize"; //in foundation bower
+@import "core/global";  // call custom global - only if $include-html-global-classes: false;
+@import "foundation"; // in foundation bower
+
+// CORE folder: Foundation doesn't use vertical_rhytm at all, start using it
+@import "core/typography"; 
+// Grid? Susy or foundation?
+@import "core/grid"; // will be added only if $include-foundation-grid == false
+@import "core/forms"; 
+
+// Import all other custom elements
+@import "elements/carousel";
+@import "elements/Header"; 
+@import "elements/Main";
+@import "elements/Callout"; 
+@import "elements/Magellan"; 
+@import "elements/mmenu"; 
+@import "elements/Footer";
+

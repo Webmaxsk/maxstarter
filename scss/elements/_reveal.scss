@@ -1,0 +1,6 @@
+@import "foundation/components/modules/reveal";
+
+.reveal-modal h2 {
+  border-bottom: 1px dotted $txtColor; padding-bottom: ms(1); margin-bottom: ms(1);
+  a {font-family: $bodyFontFamily;}
+}

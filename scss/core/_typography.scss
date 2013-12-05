@@ -1,0 +1,115 @@
+// start using vertical rhytm... Foundation does't care...
+// if using foundation mixins/functions - you should call it before this global...
+@import "compass/typography/vertical_rhythm";
+ 
+@include establish-baseline;
+ 
+html, body {
+  @include adjust-leading-to(1);
+}
+
+// any typography element (footer, header, etc,... without .typography class)
+
+a { text-decoration:none; color:$primary-color;
+	&:hover, &:focus, &:active { text-decoration:underline;
+	 &.button {text-decoration: none;}
+	 }
+}
+
+strong, b { font-family:$header-font-family; font-weight:$header-font-weight; }
+
+@function heading-rhythm(
+  $font-size: $base-font-size,
+  $good-line-height: $header-line-height
+) {
+  @return lines-for-font-size($font-size)*$base-line-height - $good-line-height*$font-size;
+}
+
+@mixin heading-rhytm($font-size: $base-font-size, $good-line-height: $header-line-height, $koef-top: 0.3, $koef-bottom: 0.7) {
+  font-size: emCalc($font-size);
+  line-height: $good-line-height;
+  padding-top: round($koef-top*heading-rhythm($font-size,$good-line-height));
+  margin-bottom: round($koef-bottom*heading-rhythm($font-size,$good-line-height));
+}
+
+h1, h2, h3, h4, h5, h6 {
+  -webkit-text-size-adjust: 100%;
+}
+
+h1, .alpha {@include heading-rhytm(32px, 1.1);}
+h2, .beta { @include heading-rhytm(24px, 1.15);}
+h3, .gamma { @include heading-rhytm(20px, 1.2);}
+h4, .delta {@include heading-rhytm(18px, 1.25);}
+h5 { @include heading-rhytm(); }
+h6 { @include heading-rhytm();}
+
+hr {
+  padding-top: 0;
+  margin: 0 0 ($base-line-height - $hr-border-width) 0;
+}
+
+// typography class
+.typography {
+  //@include debug-vertical-alignment;
+  // Basic vertical rhythm on default elements
+  ul, ol, p, table, div.clearer {margin-bottom: $base-line-height;
+    &:last-child, &.last-child {margin-bottom: 0;}
+  }
+  ul, ol { @extend .square !optional; margin-left: 2em;
+    li ul {list-style: disc;  margin-left: 1.25em; margin-bottom: 0;}
+  }
+  ol {list-style: upper-roman;
+    li ol {list-style: decimal; margin-bottom: 0;
+      li ol {list-style: lower-alpha;}
+    }
+  }
+  p+ul, p+ol {margin-top: -$base-line-height;}
+  img {
+    @include thumb;
+    @include single-transition(all,$thumb-transition-speed,ease-out);
+    &.radius { @include radius($thumb-radius); }
+  }
+  img, .captionImage {
+    &.right, &.left {margin-bottom: 0.5*$base-line-height; }
+    &.right {margin-left: 1em;}
+    &.left {margin-right: 1em;}
+  }
+  address {
+    //todo
+  }
+  blockquote {
+
+  }
+  pre {
+    //todo
+  }
+  
+	h1, h2, h3, h4 {
+	  a { display:block; }
+	} 
+	
+	// some classes
+	.primary-color {color: $primary-color;}
+	.secondary-color {color: $secondary-color;}
+	.blue {color: blue;}
+	.red {color: red;}
+	.yellow {color: yellow;}
+	.green {color: green;}
+	.leftAlone {float: none; display: block; margin: $base-line-height 0;}
+	.captionImage {
+	  .leftAlone {
+	    margin: 0;
+	  }
+	  .left, .right {margin-bottom: 0;}
+	}
+	.caption {
+	     color: $primary-color;
+      text-align: center; 
+      @include adjust-font-size-to(12px, 1, $base-font-size);
+      &.right, &.left {text-align: center; float: none !important;}
+      &.right {padding: 0 $thumb-border-width 0 $thumb-border-width+16px;}
+      &.left {padding: 0 $thumb-border-width+16px 0 $thumb-border-width;}
+    }
+	.center {margin: 0 auto; display: block; }
+	
+}

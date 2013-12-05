@@ -1,6 +1,6 @@
 <% require themedCSS(pizza) %>
-<% require javascript("themes/main/javascript/pizza/snap.svg.js") %>
-<% require javascript("themes/main/javascript/pizza/pizza.js") %>
+<% require javascript("{$ThemeDir}/javascript/pizza/snap.svg.js") %>
+<% require javascript("{$ThemeDir}/javascript/pizza/pizza.js") %>
 
 <div class="large-3 small-4 columns">
     <ul data-pie-id="nameOfPie" data-options='<% if $donut %>{"donut": "true"}<% end_if %>'>

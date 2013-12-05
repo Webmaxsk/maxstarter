@@ -16,7 +16,7 @@
 	<% if Callout %>
 		$Callout
 	<% else %>
-		$Siteconfig.WhatIsM2m
+		$Siteconfig.Tagline
 	<% end_if %>
 </div>
 

@@ -9,11 +9,11 @@
 						<ul class="dropdown">
 							<% loop Children %>
 							<li class="<% if LinkingMode == current %>active<% end_if %>">
-								<a href="$Link" title="$Title.XML page">$MenuTitle.XML</a>
+								<a href="$Link" title="$Title.XML">$MenuTitle.XML</a>
 								<% if Children %>
 								<ul class="dropdown">
 									<% loop Children %>
-									<li><a href="$Link" title="Title.XML page">$MenuTitle.XML</a></li>
+									<li><a href="$Link" title="Title.XML">$MenuTitle.XML</a></li>
 									<% end_loop %>
 								</ul>
 								<% end_if %>

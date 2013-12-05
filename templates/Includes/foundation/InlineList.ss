@@ -2,7 +2,7 @@
 	<% loop Me %>
 		<% if Link %>
 			<li<% if LinkOrSection == section %> class="active"<% end_if %>>
-				<a href="$Link" title="$Title.XML page">$MenuTitle.XML</a>
+				<a href="$Link" title="$Title.XML">$MenuTitle.XML</a>
 			</li>
 		<% else %>
 			<li>$MenuTitle.XML</li>

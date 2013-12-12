@@ -12,9 +12,9 @@ javascripts_dir = "javascript"
 output_style = :nested
 fonts_dir = "fonts"
 
-sass_options = {
-  #:debug_info => true
-} 
+# uncomment if you want to watch scss files in Chrome
+#sass_options = {:sourcemap => true}
+#enable_sourcemaps = true 
 
 # To enable relative paths to assets via compass helper functions. Uncomment:
 relative_assets = true

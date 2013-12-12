@@ -4,7 +4,7 @@
     <a data-orbit-link="headline-3" class="small button">Goto Slide 3</a>
     <a data-orbit-link="headline-4" class="small button">Goto Slide 4</a>
 <% end_if %>
-<ul class="example-orbit" data-orbit>
+<ul class="example-orbit" data-orbit data-options="bullets:false;">
     <li data-orbit-slide="headline-1">
         <% if $height %>
             $Fake.Image.CroppedImage(1000,$height)

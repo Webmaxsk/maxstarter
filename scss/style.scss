@@ -3,6 +3,10 @@
 // This includes all of the foundation global elements that are needed to work with any of the other files.
 @import "core/settings";
 
+@if $include-open-sans == false {
+  @import url("//fonts.googleapis.com/css?family=Open+Sans:400,600&subset=latin,latin-ext");
+}
+
 // compass - default mixins + reset
 @import "compass"; 
 @import "compass/reset"; 
@@ -26,4 +30,6 @@
 @import "elements/mmenu"; 
 @import "elements/Footer";
 
+// foundation icons (foundation icon font)
+// http://zurb.com/playground/foundation-icon-fonts-3
 //@import "../fonts/foundation-icons/foundation-icons.css";

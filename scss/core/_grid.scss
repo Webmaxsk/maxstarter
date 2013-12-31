@@ -4,7 +4,7 @@
  }
  
  .Block {
-   //@include trailer;
+   @include trailer;
    @include clearfix;
    margin-bottom: $base-line-height;
    padding-bottom: $base-line-height;

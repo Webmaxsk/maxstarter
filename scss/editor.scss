@@ -13,5 +13,6 @@
 
 // CORE folder: Foundation doesn't use vertical_rhytm at all, start using it
 @import "core/typography"; 
+@import "elements/Callout"; 
 
 body {background: $body-bg; padding: 20px;}

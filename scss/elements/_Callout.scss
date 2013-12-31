@@ -1,7 +1,12 @@
-#Callout {
-  .Callout {
+.Callout {
+  h1, h2, h3 {
     text-align: center; @include heading-rhytm(32px, 1.2, 0.5, 0.5);
     font-weight: normal;
+    a {display: inline;}
     strong {color: $primary-color;}
+  }
+  p {
+    text-align: center; 
+    strong, a {color: $primary-color;}
   }
 }

@@ -1,15 +1,13 @@
 @if $include-html-form-classes  {
 
  .message {
-    @include alert;
-    padding-left: 5px;
-    &.good, &.success { @include alert-style($success-color); }
-    &.bad, &.warning, &.required { @include alert-style($alert-color); }
+   @include alert($primary-color);
+    &.good, &.success { @include alert($success-color); }
+    &.bad, &.warning, &.required { @include alert($alert-color); }
   }
-
-// /* customize foundation */
-.required, .holder-required {@extend .error;}
-label.error, label.required {@include alert-style($alert-color); padding-left: 5px;}
+  .formField .message {
+    &.good, &.success, &.bad, &.warning, &.required {padding: 2px 6px; font-size: rem-calc(13px);}
+  }
 
 .Actions input { @extend .button !optional; background:$primary-color; color:#fff; box-shadow: 0 0 0 0 transparent; border:0 none;
     &:hover, &:focus, &:active { background:$secondary-color; }
@@ -20,8 +18,17 @@ label.error, label.required {@include alert-style($alert-color); padding-left: 5
 }
 
 form {
-  .field {clear: both; }
+  .field {clear: both; margin-bottom: $form-spacing;}
     .dropdown {@extend .expand !optional;}
+  .formField input {margin-bottom: 0; }
+  .required, .holder-required {
+    .formLabel label {
+      font-weight: bold;
+      &:before {
+        content: "* ";
+      }
+    }
+  }
   textarea {height: 100px;}
   .optionset {
     label {display: inline-block; margin-left: 4px;}
@@ -36,9 +43,46 @@ form {
    //@extend .no-label;
 }
 
+form {
+  &.submitted {
+     .Actions {
+       display: none;
+     }
+  }
+  &.ajax-submitted {
+    .message.row {margin: 0;}
+    .messager {text-align: center; font-weight: bold;}
+     .toggler {
+       span {
+         opacity: .8;
+         i {opacity: .65}
+         &:hover, &:hover i {opacity: 1}
+       }
+       cursor: pointer; 
+       .less {display: none;}
+       &.open {
+         .less {display: inline;}
+         .more {display: none;}
+       }
+     }
+     .closer {
+       cursor: pointer;
+       display: block;
+       width: $base-line-height; height: $base-line-height; line-height: $base-line-height;
+       opacity: .65;
+       text-align: center;
+       &:hover {opacity: 1;}
+     }
+  }
+}
+
 .horizontal {
-  &.formLabel, .formLabel {
-    label {@extend .right !optional; @extend .inline !optional;}
+  .formLabel label {
+     float: none;  text-align: right;
+     @include form-label("inline");
+  }
+  .formField  span.readonly {
+    @include form-label("inline");
   }
   .file .formLabel label {
     padding-top: 0;

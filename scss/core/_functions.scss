@@ -1,0 +1,14 @@
+@function heading-rhythm(
+  $font-size: $base-font-size,
+  $good-line-height: $header-line-height
+) {
+  @return lines-for-font-size($font-size)*$base-line-height - $good-line-height*$font-size;
+}
+
+@mixin heading-rhytm($font-size: $base-font-size, $good-line-height: $header-line-height, $koef-top: 0.3, $koef-bottom: 0.7) {
+  font-size: $font-size; // Fallback for ie8-
+  font-size: emCalc($font-size); //rem unit
+  line-height: $good-line-height;
+  padding-top: round($koef-top*heading-rhythm($font-size,$good-line-height));
+  margin-bottom: round($koef-bottom*heading-rhythm($font-size,$good-line-height));
+}

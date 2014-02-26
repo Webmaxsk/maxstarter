@@ -1,4 +1,6 @@
-add_import_path "bower_components/susy/sass"
+#require 'sass-css-importer'
+#add_import_path Sass::CssImporter::Importer.new("bower_components/normalize-css")
+#add_import_path "bower_components/susy/sass"
 add_import_path "bower_components/foundation/scss"
 
 project_type = :stand_alone
@@ -9,7 +11,7 @@ css_dir = "css"
 sass_dir = "scss"
 images_dir = "images"
 javascripts_dir = "javascript"
-output_style = :compressed
+output_style = :nested
 fonts_dir = "fonts"
 
 # uncomment if you want to watch scss files in Chrome

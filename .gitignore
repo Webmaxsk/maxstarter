@@ -1,1 +1,4 @@
-.project
+*.class
+*.pyc
+*.pyo
+.sass-cache

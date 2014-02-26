@@ -14,27 +14,26 @@
 	<div>
 		<header id="header-container" class="outer-row">
 			<div class="row">
-				<div class="medium-5 small-12 columns">
+				<div class="columns small-12 medium-3">
 					<% include Logo %>
 				</div>
-				<div class="medium-7 small-12 columns">
-					<% include TopBar allowChildren="1" %>
+				<div class="columns small-12 medium-9">
+					<% include TopBar allowChildren="1",float="right" %>
 				</div>
 			</div>
+			
 		</header>
 		
 		<section id="main-container" class="outer-row">
-			<div class="row">
-				$Layout
-			</div>
+					$Layout
 		</section>
 		
 		<footer id="footer-container" class="outer-row">
 			<div class="row">
-				<div class="medium-7 small-12 columns">
-					<% include InlineList Float="left",Me=$Menu(1) %>
+				<div class="medium-4 small-12 columns">
+					<% include SocialLinks %>
 				</div>
-				<div class="medium-5 small-12 columns">
+				<div class="medium-8 small-12 columns">
 					<p>&copy; Copyright 2012 - $Now.Year $SiteConfig.Title</p>
 				</div>
 			</div>

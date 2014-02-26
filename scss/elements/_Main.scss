@@ -1,6 +1,25 @@
-#main-container { 
-  .Block {
-    padding-left: $gutter-width / 2;
-    padding-right: $gutter-width / 2;
+
+  .Maxphotos {
+    margin-top: $base-line-height;
+  }
+  
+  .MainImageWithLogo {
+    position: relative;
+    .LogoImage {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      border: 0 none;
+      padding: 0;
+      opacity: .05;
+      img {
+        -webkit-box-shadow: none; -moz-box-shadow: none;box-shadow: none;
+      }
+    }
+     &:hover {
+        .LogoImage {
+          opacity: 0.85;
+        }
+      }
   }
 }

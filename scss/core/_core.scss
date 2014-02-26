@@ -1,0 +1,20 @@
+//* A: Settings and ready to use functions *//
+// My functions
+@import "core/functions";
+//Settings file - based on foundation 5
+@import "core/settings";
+// Compass - default mixins. You do not need this if you do not use anything from compass (some components need this)
+@import "compass"; 
+
+//* B: Global reser / normalize *//
+@import "compass/reset"; // compass reset
+// OR Normalize (choose one of them)
+//@import "CSS:normalize"; // bower one - see top of config.rb
+//@import "normalize"; //in foundation bower
+
+//* C: Foundation ? Do not comment - if you dont like to include foundation, just see core/setting-foundation-includes.scss file and set everything to false...
+@import "core/settings-foundation-includes";
+@import "foundation"; 
+
+//* D: Typography (use this one or foundation (or both)) *//
+@import "core/typography"; 

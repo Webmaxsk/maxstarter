@@ -3,11 +3,10 @@
   "private": "true",
   "directory": "javascript",
   "dependencies": {
-    "foundation": "~5.0.2",
-    "susy":"~1.0.9",
-    "jquery-mmenu": "*",
+    "foundation": "~5.0.3",
     "modernizr": "*",
     "jquery": "*",
+    "normalize-css": "*",
     "fancybox": "*"
   }
 }

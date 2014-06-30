@@ -1,3 +1,4 @@
+<% if SortedImages %>
 <ul class="clearing-thumbs<% if $showOnlyOne %> clearing-feature<% end_if %>" data-clearing>
         <% loop SortedImages %>
         <li<% if $showOnlyOne %> class="clearing-featured-img"<% end_if %>>
@@ -7,3 +8,4 @@
         </li>
         <% end_loop %>
 </ul>
+<% end_if %>

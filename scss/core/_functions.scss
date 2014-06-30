@@ -12,3 +12,23 @@
   padding-top: round($koef-top*heading-rhythm($font-size,$good-line-height));
   margin-bottom: round($koef-bottom*heading-rhythm($font-size,$good-line-height));
 }
+
+@mixin vertical-spacer($what: "margin-bottom", $multi: 1) {
+  #{$what}: $gutter-width-vertical*$multi;
+   @media #{$medium-up} {
+     #{$what}: $gutter-width-vertical-medium*$multi;
+   }
+   @media #{$large-up} {
+     #{$what}: $gutter-width-vertical-large*$multi;
+   }
+}
+
+@mixin border-default($what: "border") {
+ #{$what}: $hr-border-width $hr-border-style $hr-border-color;
+}
+
+%hide-text {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}

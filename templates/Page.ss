@@ -1,14 +1,18 @@
-<!DOCTYPE html>
-<!--[if IE 8]> <html class="no-js lt-ie9" lang="<% sprintf(_t('CONTENTLOCALE','%2.2s'),$ContentLocale) %>"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="<% sprintf(_t('CONTENTLOCALE','%2.2s'),$ContentLocale) %>"> <!--<![endif]-->
+<!doctype html>
+<% include HtmlTag %>
 <head>
 	<% base_tag %>
 	$MetaTags(false)
 	<title><% if MetaTitle %>$MetaTitle<% else %>$Title<% end_if %> | $SiteConfig.Title</title>
+	<% include SocialMeta %>
 	<meta name="viewport" content="width=device-width">
 	<link rel="author" href="/humans.txt">
 	<% require themedCSS(style) %>
-	<script src="{$ThemeDir}/bower_components/modernizr/modernizr.js"></script>
+	<link href="//fnt.webink.com/wfs/webink.css/?project=c0eca11d-de1b-4aa7-94b9-d63be0bce083&fonts=1421BCAA-4D56-EF9D-A008-8F0EFD21830C:f=MyriadPro:weight=700,8116D809-7896-5074-81F3-18855AC7EE6B:f=MyriadPro:weight=500,64D160EA-82FA-7BBE-73BF-D544248A58B0:f=MyriadPro:weight=600,73E6C83D-7F13-A8AE-4770-C315AE5061C3:f=MyriadPro:weight=400" rel="stylesheet" type="text/css"/>
+	<!--[if lte IE 8]>
+    	<script src="$themedir/bower_components/html5shiv/dist/html5shiv-printshiv.min.js"></script>
+    	<script src="$themedir/javascript/css3-mediaqueries.js"></script>
+	<![endif]-->
 </head>
 <body>
 	<div>
@@ -25,19 +29,10 @@
 		</header>
 		
 		<section id="main-container" class="outer-row">
-					$Layout
+			$Layout
 		</section>
 		
-		<footer id="footer-container" class="outer-row">
-			<div class="row">
-				<div class="medium-4 small-12 columns">
-					<% include SocialLinks %>
-				</div>
-				<div class="medium-8 small-12 columns">
-					<p>&copy; Copyright 2012 - $Now.Year $SiteConfig.Title</p>
-				</div>
-			</div>
-		</footer>
+		<% include Footer %>
 	</div>
 </body>
 </html>

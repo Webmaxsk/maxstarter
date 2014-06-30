@@ -1,0 +1,32 @@
+body {
+  background: #c5e4f8;
+}
+
+#ziara {
+  background: transparent url("../images/background3.jpg") no-repeat center top;
+}
+
+#Logo {
+  text-align: center;
+  margin: 25px 0;
+  img {width: 195px; height: 80px; background: transparent;}
+}
+
+.block {
+  padding: 30px; border-radius: $global-radius; background: #fff;
+}
+
+@media (min-width: $bg-breakpoint) {
+  body {
+    background: #c5e4f8 url("../images/background2.png") repeat-x 0 0;
+  }
+
+  #ziara {
+    background: transparent url("../images/background1.jpg") no-repeat center top;
+  }
+  
+  #Logo {
+    margin: 50px 0;
+    img {width: 390px; height: 160px;}
+  }
+}

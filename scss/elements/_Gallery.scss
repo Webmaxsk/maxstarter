@@ -1,0 +1,35 @@
+$gutter-gallery-px: 5px;
+$full-column-width: 270px;
+$gutter-gallery: $gutter-gallery-px/$full-column-width*100%;
+
+%gallery-big-small-static {
+  margin: -#{$gutter-gallery};
+  @include clearfix;
+  a, img {display: inline-block;}
+  a {margin: $gutter-gallery; float: left; }
+}
+
+
+.SortedImages {
+  //@extend %gallery-big-small-static;
+}
+
+#main-container .gallery-right {margin: 5px 0 15px 0;
+  & > li {
+    padding: 15px;
+  }
+}
+
+#main-container .small-block-grid-4.gallery-left > li {
+      padding: 10px 5px 0 5px; clear: none;
+      margin-top: -10px;
+}
+
+@media #{$medium-up} {
+  #main-container .medium-block-grid-2.gallery-left > li {
+      margin-top: 0;
+      &.first {width: 100%; padding: 0;}
+      &.even {padding-left: 0;}
+      &.odd {padding-right: 0;}
+  }
+}

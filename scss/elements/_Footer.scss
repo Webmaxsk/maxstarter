@@ -1,5 +1,24 @@
 #footer-container {
+  background: #f3f1f2;
   padding: $base-line-height 0;
-  border-top: 1px solid $secondary-color;
-	ul {margin-left: 0;}
+  h4 {margin: 0 0 15px 0;}
+}
+
+#copy p {
+  text-align:center; font-size: rem-calc(15);
+}
+#copyright span {color: $secondary-color;}
+@media #{$large-up} {
+  p#copyright {text-align: left;}
+  p#webmax {text-align: right;}
+}
+
+a#webmax {
+  color: $body-font-color;
+  text-decoration: none;
+  strong {color: $primary-color;}
+  &:hover, &:focus, &:active { 
+    text-decoration:none;
+    strong { text-decoration:underline; }
+  }
 }

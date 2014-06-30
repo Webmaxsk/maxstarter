@@ -2,16 +2,7 @@
 <form $AttributesHTML>
 <% end_if %>
 	<% if Message %>
-		<div id="{$FormName}_message" class="message $MessageType row">
-			<span class="columns medium-3 toggler">
-					<span class="more"><i class="fi-plus"></i> <% _t("Form.READMORE", "More information") %></span>
-					<span class="less"><i class="fi-minus"></i> <% _t("Form.READLESS", "Less information") %></span> 
-			</span>
-			<span class="columns medium-6 messager">
-					$Message
-			</span>
-			<span class="columns medium-3 closer right"><i class="fi-x"></i></span>
-		</div>
+	<div id="{$FormName}_error" class="alert-box<% if $MessageType == "bad" %> alert<% end_if %>">$Message<a href="" class="close">&times;</a></div>
 	<% else %>
 	<div id="{$FormName}_error" class="alert-box secondary" style="display: none"></div>
 	<% end_if %>

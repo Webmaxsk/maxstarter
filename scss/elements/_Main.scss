@@ -1,25 +1,65 @@
+#main-container { 
+  @include vertical-spacer(margin-top);
+}
 
-  .Maxphotos {
+.space-bottom-base {
+    margin-bottom: $base-line-height;
+ }
+ 
+ .space-top-base {
     margin-top: $base-line-height;
-  }
-  
-  .MainImageWithLogo {
-    position: relative;
-    .LogoImage {
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      border: 0 none;
-      padding: 0;
-      opacity: .05;
-      img {
-        -webkit-box-shadow: none; -moz-box-shadow: none;box-shadow: none;
-      }
-    }
-     &:hover {
-        .LogoImage {
-          opacity: 0.85;
-        }
-      }
+ }
+ 
+.space-top-small {
+    @include vertical-spacer(margin-top);
+ }
+
+ .space-bottom-big {
+    @include vertical-spacer(margin-bottom, 2);
+ }
+ 
+ .space-bottom-small, .tretinka, .polovicka, .stvrtinka {
+   @include vertical-spacer(margin-bottom);
+ }
+ 
+header hr {
+  margin: 7px 0 30px 0;
+}
+
+.BrandsList {
+  color: $secondary-color;
+  margin-top: $base-line-height;
+  strong {color: $primary-color;}
+  a {color: $body-font-color;}
+  a.ReadMore {color: $primary-color;}
+  p.ReadMoreP {margin-top: 9px;}
+}
+
+.NewsList {
+  li {clear: left;}
+  strong {float:left; font-size: rem-calc(14); color: $secondary-color; font-weight: normal; line-height: 21px; padding-top: 2px; margin-bottom: 1px; width: 100%; 
+    @media #{$medium-up} {width: 65px;}
   }
 }
+
+.MaxPhotos {
+  margin-top: 22px;
+}
+
+.side-nav {
+  border-bottom: 1px dashed #ddd;
+  li {border-top: 1px dashed #ddd;}
+  a {padding: 4px 0;}
+  li.active a {font-weight: bold !important;}
+}
+
+.dashed-heading {
+  @include vertical-spacer("margin-top");
+  padding-bottom: 15px;
+  margin-bottom: 5px;
+  border-bottom: 1px dashed #dcdcdc;
+}
+
+ .space-top-zero {
+   margin-top: 0;
+ }

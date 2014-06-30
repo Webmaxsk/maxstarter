@@ -1,0 +1,36 @@
+  .MainImageWithLogo {
+    position: relative;
+    .LogoImage {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      border: 0 none;
+      padding: 20px;
+      background: #fff;
+      text-align: center;
+      height: 100%;
+      width: 100%;
+      opacity: 0;
+      img {
+        -webkit-box-shadow: none; -moz-box-shadow: none;box-shadow: none;
+        max-height: 100%;
+      }
+    }
+     &:hover, &:focus, &:active {
+        .LogoImage {
+          opacity: 0.85;
+        }
+      }
+  }
+  
+  a.MainImageWithLogo {
+    display: inline-block;
+    width: 100%;
+    .LogoImage { display: none;}
+   @media #{$large-up} {
+     width: auto;
+     .LogoImage {
+        display: block;
+      }    
+    }
+  }

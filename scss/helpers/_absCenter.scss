@@ -1,0 +1,58 @@
+/*
+ * http://css-tricks.com/centering-in-the-unknown/
+ */
+/* This parent can be any width and height */
+.absCenter--center {
+  text-align: center;
+}
+
+.absCenter--left {
+  text-align: left;
+}
+
+.absCenter {
+    font-size: 0;
+    width: 100%; /* Firefox needs this */
+    height: 100%; 
+}
+ 
+/* The ghost, nudged to maintain perfect centering */
+.absCenter:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -0.25em; /* Adjusts for spacing */
+}
+
+/* The element to be centered, can
+   also be of any width and height */ 
+.absCenter__item {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.flexCenter {
+    width: 100%; /* Firefox needs this */
+    height: 100%; /* Height can be anything */
+        
+    /* WebKit (Chrome & Safari) */
+    display: -webkit-box;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+    
+    /* Firefox */
+    display: -moz-box;
+    -moz-box-pack: center;
+    -moz-box-align: center;
+    
+    /* IE */
+    display: -ms-box;
+    -ms-box-pack: center;
+    -ms-box-align: center;
+    
+     /* Native CSS */
+    display: box;
+    box-pack: center;
+    box-align: center;
+}

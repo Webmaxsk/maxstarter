@@ -1,0 +1,90 @@
+#Carousel_wrapper {
+    padding: 10px;
+   @media #{$large-up} {
+     padding: 20px;
+   }
+  border-radius: 10px;
+  background: #fff;
+  @include vertical-spacer(margin-bottom);
+}
+
+#Carousel_padded {
+    position: relative; overflow: hidden;
+}
+
+#Carousel {
+  max-height: 370px;
+  overflow: hidden;
+}
+
+#Carousel__pager {
+  text-align: center; height: 15px; line-height: 15px; font-size: 5px; margin: 10px 0 5px 0;
+  a {width: 15px; height: 15px; line-height: 10px; display: inline-block; font-size: 5px; background: #d3e9f7; color: #d3e9f7; margin: 0 5px; border-radius: 15px;
+    &.selected {background: $secondary-color; color: $secondary-color;}
+  }
+  @media #{$large-up} {
+     margin-top: 20px;
+  }
+}
+
+.Slide {
+  position: relative;
+
+  img, a {display: block;}
+
+  .Slide__data, .Slide_link {
+    position: absolute;
+    right: 0;
+    top: 0;
+    //width: 100%;
+    height: 100%; 
+    padding: 25px 30px;
+    @media #{$medium-up} {width: 250px;}
+    @media #{$large-up} {width: 280px;}
+    background: $primary-color;
+    @media (max-width: 600px) {background: rgba($primary-color, 0.85);}
+    padding: $base-line-height $gutter-width;
+     color: #fff;
+  }
+  h1, h2, h3, h4 {
+    color: #fff;
+    @include heading-rhytm(22px, 1.1, 0.5, 0.5);
+    @media #{$medium-up} {@include heading-rhytm(30px, 1.1, 0.5, 0.5);}
+  }
+  p, ul {font-size: rem-calc(18);
+  .RMT {background: #fff; color: $primary-color; border-radius: 10px; display: inline-block; padding: 7px 12px; font-weight: 600;}
+  }
+  p.termin {margin: 0;}
+}
+
+.clearfix {
+    float: none;
+    clear: both;
+}
+
+@media (min-width: 1000px) {
+  .Carousel__controls {
+    position: absolute;
+    top: 50%;
+    background: transparent url("../images/arrows_sprite.png") no-repeat 0 0;
+    width: 18px;
+    height: 28px;
+    margin-top: -14px;
+    cursor: pointer;
+    display: none;
+    &.disabled {width: 0px;}
+  }
+  #Carousel__controls__prev {
+      left: -48px;
+      &:hover, &:active, &:focus {
+          background-position:  0 -28px;
+      }
+  }
+  #Carousel__controls__next {
+    right: -48px;
+    background-position:  -18px 0;
+     &:hover, &:active, &:focus {
+          background-position:  -18px -28px;
+      }
+  }
+}

@@ -4,6 +4,13 @@
 @include establish-baseline;
 html, body {
   @include adjust-leading-to(1);
+  font-size: 14px;
+  @media #{$medium-up} {
+    font-size: 15px;
+  }
+  @media #{$large-up} {
+    font-size: $base-font-size;
+  }
 }
 
 // some kind of custom global. This will be added by foundation if $include-html-global-classes set to TRUE via foundation.
@@ -38,6 +45,18 @@ a { text-decoration:none; color:$primary-color;
 	&:hover, &:focus, &:active { text-decoration:underline;
 	 &.button {text-decoration: none;}
 	 }
+	 &.ReadMoreLink {
+	   position: relative;
+	   &:after {
+	     content: "";
+	     width: 5px;
+	     height: 9px;
+	     position: absolute;
+	     right: -15px;
+	     top: 7px;
+	     background-image: inline-image("../images/beak_blue.png");
+	   }
+	 }
 }
 
 strong, b { 
@@ -46,18 +65,20 @@ strong, b {
 
 p, ul, ol {margin-bottom: 0;}
 
-h1, h2, h3, h4, h5, h6, .alpha, .beta, .gamma, .delta, .epsilon, .zeta {
+h1, h2, h3, h4, h5, h6 {
   font-family:$header-font-family; 
   font-weight:$header-font-weight;
   color: $header-font-color;
+  margin: 0;
   font-style: $header-font-style;
   line-height:  $header-line-height;
    -webkit-text-size-adjust: 100%;
+  a {text-decoration: none;}
 }
-h1, .alpha {@include heading-rhytm(40px, 1.1);}
-h2, .beta { @include heading-rhytm(35px, 1.15);}
-h3, .gamma { @include heading-rhytm(26px, 1.2); }
-h4, .delta {@include heading-rhytm(21px, 1.25);}
+h1, .alpha {@include heading-rhytm(30px, 1.1, 0,1); }
+h2, .beta { @include heading-rhytm(25px, 1.15);}
+h3, .gamma { @include heading-rhytm(20px, 1.25); color: $body-font-color;}
+h4, .delta {@include heading-rhytm(18px, 1.33);color: $body-font-color;}
 h5, .epsilon, h6, .zeta { @include heading-rhytm(); color: $body-font-color;}
 
 img {background: $body-bg;}
@@ -67,6 +88,13 @@ hr {
   margin: 0 0 ($base-line-height - $hr-border-width) 0;
 }
 
+ul {
+  list-style: none;
+  margin-left: 0;
+}
+
+table th {text-align: left;}
+
 // typography class
 .typography {
   //@include debug-vertical-alignment;
@@ -75,8 +103,10 @@ hr {
     margin-bottom: $base-line-height;
     &:last-child, &.last-child {margin-bottom: 0;}
   }
+  ul {
+    list-style: square; margin-left: 1.5em;
+  }
   ul, ol { 
-    @extend .square !optional; margin-left: 2em;
     li ul {list-style: disc;  margin-left: 1.25em; margin-bottom: 0;}
   }
   ol {

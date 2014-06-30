@@ -1,0 +1,60 @@
+  .top-bar-wrapper {margin-bottom: 20px;}
+  .top-bar, .top-bar-section ul {background: transparent;}
+  .top-bar {
+    @media #{$large-up} {
+      margin-top: 50px;
+      float: right !important;
+    }
+  }
+  .top-bar-section {
+    ul {padding-bottom: 24px;}
+    ul li {
+      margin: 0 10px;
+     strong {
+        line-height: $topbar-height;
+        font-size: $topbar-link-font-size;
+      } 
+      a {
+        text-decoration: none;
+        span {
+              line-height: $topbar-height;
+              height: $topbar-height;
+              display: block;
+        }
+      }
+      &.last {margin-right: 0;}
+      &.first {margin-left: 0;}
+      &.level-1.active {
+        a {border-bottom: 1px solid $body-font-color; margin-bottom: -1px;}
+      }
+      @media only screen and (max-width: #{$topbar-breakpoint}) {
+        margin: 0;
+        a {
+          background: #fff;
+          padding: 5px 10px;
+          line-height: 30px;
+        }
+        h5 a {background: #d5d5d5;}
+        &.active a {background: $primary-color; color: #fff;}
+      }
+    }
+    @media #{$topbar-media-query} {
+      ul {padding-bottom: 0;}
+      ul li {
+        ul li{
+          margin: 0;
+          a {padding: 0 10px; background: #d8d8d8; line-height: 36px; opacity: .9;}
+        }
+        &.divider {display: none;}
+      }
+      .has-dropdown .dropdown li.has-dropdown > a {
+        &:focus, &:active, &:hover {color: $primary-color;}
+        &:after {
+          top: 9px; right: 20px;
+         }
+      }
+      li.active:not(.has-form) a:not(.button) {
+        &:focus, &:active, &:hover {color: $primary-color;}
+      }
+    }
+  }

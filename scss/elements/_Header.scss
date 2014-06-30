@@ -1,57 +1,13 @@
 #header-container {
-  //border-bottom: 1px solid $secondary-color;
-  //margin-bottom: $base-line-height;
-
-  // fix: do not change active menu colors
-  .top-bar-section ul li.active > a {
-    &, &:hover, &:active, &:focus {
-          background: $topbar-link-bg-active;
-          color: $topbar-link-color-active;
-    }
-  }
-  .top-bar-section ul li a {
-    padding: 0 10px;
-  }
-  .top-bar-section .has-dropdown > a {
-    padding-right: 30px !important;
-  }
-  .top-bar-section .has-dropdown > a:after {
-    margin-right: 10px;
-  }
-  .top-bar-section .dropdown li a {
-        background: $topbar-dropdown-link-bg;
-        line-height: $base-line-height;
-  }
-  .top-bar-section li strong {
-    line-height: 78px;
-  }
-  .translations {
-    margin-left: 30px;
-  }
+  border-bottom: 1px solid #d5d5d5;
+  margin-bottom: -1px;
+  @import "top-bar-custom";
 }
 
-// Logo fix
-$logo-width: 210px;
-#Logo {
-  padding: $base-line-height 0;
-  img {max-width: $logo-width; width: $logo-width;}
-  @media only screen and (max-width: rem-calc($logo-width) + rem-calc(2*$column-gutter)) {
-    img {width: 100%;}
-  }
-  @media #{$medium-only} {
-    img {width: 100%;}
-  }
-  @media #{$small-only} {
-    text-align: center;
-    //border-bottom: 1px solid #efefef;
-  }
-}
+//@import "flying-translations";
 
-#SearchForm {margin: $base-line-height 0;
-  input, form {margin: 0;}
-}
+// Use this if using logo in column
+@import "Logo";
 
-.TranslationSwitcher li {margin-left: 0;
-  a {padding: 0 5px;}
-}
+
 

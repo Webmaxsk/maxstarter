@@ -1,0 +1,88 @@
+#header-container {
+  .SocialLinksWrapper {position: relative;}
+  .SocialLinks {
+    z-index: 2;
+    position: absolute;
+    min-width: 150px;
+    top: 110px;
+    left: 15px;
+    padding-right: 35px;
+    @media #{$topbar-media-query} {
+      top: 20px;
+      left: auto;
+      right: 15px;
+    }
+    a {
+      width: 30px;
+      height: 30px;
+      display: inline-block;
+      background: transparent url("../images/icons_01_sprite.png") no-repeat 0 0;
+      margin-right: 2px;
+      &:hover, &:active, &:focus {
+          background-position: 0 -30px;
+        }
+      &.fb {
+        background-position: -30px 0;
+        &:hover, &:active, &:focus {
+          background-position: -30px -30px;
+        }
+      }
+      &.twitter {
+        background-position: -60px 0;
+        &:hover, &:active, &:focus {
+          background-position: -60px -30px;
+        }
+      }
+      &.pinterest {
+        background-position: -90px 0;
+        &:hover, &:active, &:focus {
+          background-position: -90px -30px;
+        }
+      }
+      &.instagram {
+        background-position: -120px 0;
+        margin-right: 0;
+        &:hover, &:active, &:focus {
+          background-position: -120px -30px;
+        }
+      }
+    }
+  }
+}
+
+
+#footer-container {
+  .SocialLinks {
+    a {
+      width: 48px;
+      height: 48px;
+      display: inline-block;
+      background-image: inline-image("../images/icons_02_sprite.png");
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      margin-right: 1px;
+      &:hover, &:active, &:focus {
+          background-position: 0 -48px;
+        }
+      &.pinterest {
+        background-position: -96px 0;
+        &:hover, &:active, &:focus {
+          background-position: -96px -48px;
+        }
+      }
+      &.twitter {
+        background-position: -48px 0;
+        &:hover, &:active, &:focus {
+          background-position: -48px -48px;
+        }
+      }
+      &.instagram {
+        background-position: -144px 0;
+        margin-right: 0;
+        &:hover, &:active, &:focus {
+          background-position: -144px -48px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,82 @@
+.big-icon-block {
+	text-align: center;
+	h2 {
+		font-size: rem-calc(16px);
+		margin: 0;
+		padding: 0;
+		font-weight: 600;
+	}
+	.big-icon-holder {
+		span {
+			width: 50px;
+			height: 50px;
+			margin: 0 auto 15px auto;
+			display: block;
+			background: transparent url("../images/icons_sprite.png") no-repeat 0 0;
+			background-size: auto 200%;
+		}
+		a {
+		  color: $body-font-color;
+			&:hover, &:focus, &:active {
+				color: $secondary-color;
+				text-decoration: none;
+				span {
+					background-position: 0 100%;
+				}
+			}
+		}
+	}
+	section {
+	  margin-top: 20px;
+	}
+}
+
+#ContactData .big-icon-block h2 {
+  font-size: rem-calc(20px);
+  @media #{$large-up} {
+    font-size: rem-calc(25px);  
+  }
+}
+
+@for $i from 2 through 8 {
+	#big-icon-#{$i} {
+		span {
+			background-position: #{-50*($i - 1)}px 0;
+		}
+		a {
+			&:hover, &:focus, &:active {
+				span {background-position: #{-50*($i - 1)}px -50px;}
+			}
+		}
+	}
+}
+
+@media #{$medium-up} {
+  .big-icon-block {
+     h2 {
+      font-size: rem-calc(20px);
+    }
+    .big-icon-holder {
+      span {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 20px;
+      }
+      a {color: $primary-color;}
+    }
+  }
+  
+  
+	@for $i from 2 through 8 {
+		#big-icon-#{$i} {
+			span {
+				background-position: #{-100*($i - 1)}px 0;
+			}
+			a {
+				&:hover, &:focus, &:active {
+					span {background-position: #{-100*($i - 1)}px -100px;}
+				}
+			}
+		}
+	}
+}

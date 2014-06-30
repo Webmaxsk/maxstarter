@@ -1,0 +1,22 @@
+ul.flying-translations {
+    
+    li { 
+      display: inline-block;
+      a, span, strong {
+          text-transform: uppercase;
+          font-weight: $topbar-link-weight;
+          line-height: $topbar-height;
+          font-size: $topbar-link-font-size;
+          color: $topbar-link-color;
+      }
+      strong {
+        color: $primary-color;
+      }
+    } 
+    position: absolute;
+    top: 0;
+    @media (min-width: 1100px) {
+      top: 30px;
+    }
+    right: $column-gutter/2;
+}

@@ -16,7 +16,7 @@ label.error, label.required {@include alert-style($alert-color); padding-left: 5
 }
 
 .no-label {
-  .formLabel {display: none;}
+  .formLabel, .fieldholder-small-label {display: none;}
 }
 
 form {
@@ -70,3 +70,15 @@ form {
 #FoundationMemberLoginForm_LoginForm fieldset { background:transparent; }
 
 }
+
+form .fieldgroup {
+  &.field {padding: 15px 0;}
+  .no-label {
+    .formLabel {display: none;}
+    .formField {width: 100%; padding: 0; }
+  }
+  .field {clear: none;}
+}
+
+  .checkbox .formField {}
+form h3 {padding-left: 15px; margin-bottom: 10px; color: $primary-color;}

@@ -4,15 +4,27 @@
 @import "core/core";
 
 //* E: Layout / grid. Html5boilerplate - responsive OR something else (Susy, ...). Or using foundation? *//
-@import "layout/myfoundation"; // Commnet if using foundation
+//@import "layout/layout"; // Commnet if using foundation
 
 //* F:  Import all other custom elements //
 @import "elements/forms-foundation"; // forms based on foundation forms. Will be used only if $include-html-form-classes is set to TRUE
-//@import "elements/carousel";
+@import "elements/Carousel";
 @import "elements/Header"; 
 @import "elements/Main";
 @import "elements/Callout"; 
+@import "elements/SocialLinks"; 
+@import "elements/BigIconBlock"; 
+@import "elements/Gallery"; 
+@import "elements/myBreadcrumbs"; 
 @import "elements/Footer";
+
+@import "helpers/absCenter";
+
+// 5.2.0 fixes
+.reveal-modal-bg {
+    z-index: 98;
+}
+
 
 // foundation icons (foundation icon font)
 // http://zurb.com/playground/foundation-icon-fonts-3

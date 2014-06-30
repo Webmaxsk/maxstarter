@@ -7,10 +7,10 @@
 @import "compass"; 
 
 //* B: Global reser / normalize *//
-@import "compass/reset"; // compass reset
+//@import "compass/reset"; // compass reset
 // OR Normalize (choose one of them)
 //@import "CSS:normalize"; // bower one - see top of config.rb
-//@import "normalize"; //in foundation bower
+@import "normalize"; //in foundation bower
 
 //* C: Foundation ? Do not comment - if you dont like to include foundation, just see core/setting-foundation-includes.scss file and set everything to false...
 @import "core/settings-foundation-includes";

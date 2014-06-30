@@ -23,7 +23,7 @@
             <ul class="<% if $float="right" %>right<% else %>left<% end_if %>">
                 <% loop Menu(1) %>
                 <li class="<% if LinkOrSection == section %>active<% end_if %><% if allowChildren %><% if Children %> has-dropdown<% end_if %><% end_if %>">
-                    <a href="$Link" title="$Title.XML page">$MenuTitle.XML</a>
+                    <a href="$Link" title="$Title.XML">$MenuTitle.XML</a>
                     <% if allowChildren %>
                     <% if Children %>
                     <ul class="dropdown">

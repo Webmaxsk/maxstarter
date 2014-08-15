@@ -1,32 +1,46 @@
-body {
-  background: #c5e4f8;
+.bg-gray {
+  background: $bg-gray;
+}
+.space-bottom-base {
+    padding-bottom: $base-line-height;
+ }
+ 
+ .space-top-base {
+    padding-top: $base-line-height;
+ }
+ 
+.space-top-small {
+    @include vertical-spacer(padding-top);
+ }
+
+ .space-bottom-big {
+    @include vertical-spacer(padding-bottom, 2);
+ }
+ 
+ .space-bottom-oneandhalf {
+   @include vertical-spacer(padding-bottom, 1.5);
+ }
+ 
+  .space-top-big {
+    @include vertical-spacer(padding-top, 2);
+ }
+ 
+ .space-bottom-small, .tretinka, .polovicka, .stvrtinka {
+   @include vertical-spacer(padding-bottom);
+ }
+ 
+header hr {
+  margin: 7px 0 30px 0;
 }
 
-#ziara {
-  background: transparent url("../images/background3.jpg") no-repeat center top;
+ .space-top-zero {
+   margin-top: 0; padding: 0;
+ }
+
+.fb-like {
+  margin: 20px 0; max-width: 100%; overflow: hidden;
 }
 
-#Logo {
-  text-align: center;
-  margin: 25px 0;
-  img {width: 195px; height: 80px; background: transparent;}
-}
-
-.block {
-  padding: 30px; border-radius: $global-radius; background: #fff;
-}
-
-@media (min-width: $bg-breakpoint) {
-  body {
-    background: #c5e4f8 url("../images/background2.png") repeat-x 0 0;
-  }
-
-  #ziara {
-    background: transparent url("../images/background1.jpg") no-repeat center top;
-  }
-  
-  #Logo {
-    margin: 50px 0;
-    img {width: 390px; height: 160px;}
-  }
+.relative {
+  position: relative;
 }

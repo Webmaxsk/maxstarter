@@ -8,11 +8,17 @@
 	<meta name="viewport" content="width=device-width">
 	<link rel="author" href="/humans.txt">
 	<% require themedCSS(style) %>
-	<link href="//fnt.webink.com/wfs/webink.css/?project=c0eca11d-de1b-4aa7-94b9-d63be0bce083&fonts=1421BCAA-4D56-EF9D-A008-8F0EFD21830C:f=MyriadPro:weight=700,8116D809-7896-5074-81F3-18855AC7EE6B:f=MyriadPro:weight=500,64D160EA-82FA-7BBE-73BF-D544248A58B0:f=MyriadPro:weight=600,73E6C83D-7F13-A8AE-4770-C315AE5061C3:f=MyriadPro:weight=400" rel="stylesheet" type="text/css"/>
 	<!--[if lte IE 8]>
     	<script src="$themedir/bower_components/html5shiv/dist/html5shiv-printshiv.min.js"></script>
-    	<script src="$themedir/javascript/css3-mediaqueries.js"></script>
 	<![endif]-->
+	<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+	<script>
+		WebFont.load({
+			google: {
+		    		families: ["Open Sans:regular,300,600,700:latin,latin-ext"]
+		  	}
+		});
+	</script>
 </head>
 <body>
 	<div>

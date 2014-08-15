@@ -1,7 +1,7 @@
 // Logo fix
-$logo-width: 177px;
+$logo-width: 205px;
 #Logo {
-  margin: 20px 0;
+  a {padding: 17px 0 18px 0; display: block;}
   img {max-width: $logo-width; width: $logo-width;background: transparent;}
   @media only screen and (max-width: rem-calc($logo-width) + rem-calc(2*$gutter-width)) {
     img {width: 100%;}

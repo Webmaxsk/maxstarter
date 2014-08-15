@@ -54,13 +54,13 @@ a { text-decoration:none; color:$primary-color;
 	     position: absolute;
 	     right: -15px;
 	     top: 7px;
-	     background-image: inline-image("../images/beak_blue.png");
+	     //background-image: inline-image("../images/beak_blue.png");
 	   }
 	 }
 }
 
 strong, b { 
-  font-weight:$base-weight-bold;
+  font-weight:$font-weight-bold;
 }
 
 p, ul, ol {margin-bottom: 0;}
@@ -73,13 +73,21 @@ h1, h2, h3, h4, h5, h6 {
   font-style: $header-font-style;
   line-height:  $header-line-height;
    -webkit-text-size-adjust: 100%;
-  a {text-decoration: none;}
+  a {text-decoration: none; color: inherit;
+    &:hover, &:active, &:focus {color: $primary-color; text-decoration: none;}
 }
-h1, .alpha {@include heading-rhytm(30px, 1.1, 0,1); }
-h2, .beta { @include heading-rhytm(25px, 1.15);}
-h3, .gamma { @include heading-rhytm(20px, 1.25); color: $body-font-color;}
-h4, .delta {@include heading-rhytm(18px, 1.33);color: $body-font-color;}
-h5, .epsilon, h6, .zeta { @include heading-rhytm(); color: $body-font-color;}
+}
+h1, .alpha {@include heading-rhytm(46px, 1.17, 0,1); margin-bottom: 20px; }
+h2, .beta { @include heading-rhytm(36px, 1.15); margin-bottom: 20px;}
+h1, .alpha, h2, .beta, h3, .gamma, h4, .delta {
+  strong {color: $primary-color; font-weight: inherit;}
+  em {color: $primary-color; font-size: 0.75em; font-style: normal; display: block; line-height: 1.5;}
+  b {font-weight: inherit; font-size: 0.625em; line-height: 1.5;}
+  b.mini {font-size: rem-calc(16px);}
+}
+h3, .gamma { @include heading-rhytm(22px, 1.25); }
+h4, .delta {@include heading-rhytm(18px, 1.33);}
+h5, .epsilon, h6, .zeta { @include heading-rhytm();}
 
 img {background: $body-bg;}
 
@@ -140,6 +148,7 @@ table th {text-align: left;}
 	.primary-color {color: $primary-color;}
 	.left {float: left;}
 	.right {float: right;}
+	.big {font-size: 150%;}
 	.secondary-color {color: $secondary-color;}
 	.blue {color: blue;}
 	.red {color: red;}
